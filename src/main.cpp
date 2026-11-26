@@ -1,19 +1,16 @@
 /*
 When you BUILD and UPLOAD then RUN this code in PLATFORMIO,
 it will continually scroll colours past you. You must use
-the ESP-PROG, to determine the number and order of the
+the ESP-PROG2, to determine the number and order of the
 colours.
-First you must upload the program with out the ESP-PROG
-connected.
-Then connect the ESP-PROG, and uncomment the LAST 3 lines
-in platformio.ini .
+First you must upload the program 
+
 After the UPLOAD option is finished, choose:
 RUN/DEBUG. By setting breakpoints you can determine the
-number and order of the colours displayed.
-You will have to set monitor_port   to the COM port associated 
-with the ESP32 NOT the ESP-PROG.
- See PlatformIO.ini for details
- */
+number and order of the colours displayed (beside each for statements)
+
+Click on the PLUG ICON to see the colours.
+*/
 
 
 #include "arduino.h"
@@ -21,6 +18,7 @@ int i;
 void setup()
 {
   Serial.begin(9600);
+  printf("\e[0m");
 }
 void loop()
 {
